@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "anime-italic";
+    src: url("../fonts/anime-ita.otf");
+}
+
+@font-face {
+    font-family: "anime-bold";
+    src: url("../fonts/anime-bold.otf");
+}
+
+@font-face {
+    font-family: "anime";
+    src: url("../fonts/anime.otf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+	border: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    & #app {
+        margin: auto;
+
+        & #request-form {
+            border: 2px solid;
+            border-color: rgb(98, 98, 98) rgb(190, 190, 190) rgb(190, 190, 190) rgb(98, 98, 98);
+            & button {
+                padding: 1vh;
+            }
+        }
+    }
+}
