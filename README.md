@@ -10,11 +10,11 @@
 
 ## License
 
-## See LICENSE.
+- See LICENSE.
 
 ## Authors
 
-## See contributors
+- See contributors
 
 ## AI
 
