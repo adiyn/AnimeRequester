@@ -1,4 +1,4 @@
-const API_KEY = 'b3d9f9d836msh885d26bf25597c1p103184jsnbcd76de3c9da';
+const API_KEY = '6d58af8466msh653ad08fa50887fp160531jsnafa3d9f8de10';
 
 const API_HOST = 'anime-db.p.rapidapi.com';
 const BASE_URL = `https://${API_HOST}`;
