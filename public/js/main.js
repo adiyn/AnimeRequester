@@ -1,22 +1,21 @@
+import { searchByTitle } from 'api.js';
+
 let form=document.getElementById("request-form");
-form.addEventListener("submit",function(event){
+form.addEventListener("submit",async function(event){
     event.preventDefault();
-
-
-    try{
-        if(validerFormulaire()){
-            let valRecup=document.querySelector('input[name="search"]').value;
-            console.log(valRecup);
-        }
-    }catch(erreur){
-        alert("Une erreur est survenue:"+erreur.message);
+    const formData = new FormData(form);
+    
+    for(const[name,value] of formData.entries()){
+        console.log(`${name}:${value}`);
     }
+    console.log("coucou");
+    let titreAnime= formData.get("search");
+    console.log("Resultat pour: ",titreAnime);
+
+    const resultatAnime=await searchByTitle(titreAnime);
+    console.log(resultatAnime);
+   
+    
+
 });
 
-function validerFormulaire(){
-    var nom=document.querySelector('input[name="search"]').value;
-    if(nom==""){
-        throw new Error("Le champ ne peut pas etre vide");
-    }
-    return true;
-}
