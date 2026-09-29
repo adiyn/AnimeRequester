@@ -8,21 +8,30 @@
 </head>
 <body>
     <main id="app">
-        <div id="bannery">
+        <div id="banner-x">
+            <!-- todo : bah une banniere jcp -->
+        </div>
+        <div id="banner-y">
             <!-- todo : bah une banniere jcp -->
         </div>
         <section id="request-container">
+            <p>Entrez votre recherche ici :</p>
             <div id="request">
-                <form id="request-form">
-                    <input type="text" name="request-content" required>
+                <form id="request-form" action="https://anime-db.p.rapidapi.com/anime" method="GET">
+                    <input type="text" name="genres" placeholder="Fantasy,Drama" required>
+                    <input type="text" name="sortBy" placeholder="ranking" required>
+                    <input type="text" name="sortOrder" placeholder="asc" required>
+                    <input type="text" name="search" placeholder="Fullmetal" required>
+                    <input type="text" name="page" placeholder="1" required>
+                    <input type="text" name="size" placeholder="10" required>
                     <button type="submit">lookup</button>
                 </form>
             </div>
         </section>
         <section id="response-container">
-            <div id="response-content">
-                <!-- ne pas toucher on génère avec du js -->
-            </div>
+            <span id="id="response-content"">
+                <!-- a faire avec du js -->
+            </span>
         </section>
     </main>
     <footer id="bigfoot-container">
