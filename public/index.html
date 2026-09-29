@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimeRequester</title>
     <link href="./css/style.css" rel="stylesheet"> 
-    <script src="js/mains.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <main id="app">
@@ -18,7 +18,7 @@
         <section id="request-container">
             <p>Entrez votre recherche ici :</p>
             <div id="request">
-                <form id="request-form" action="https://anime-db.p.rapidapi.com/anime" method="GET">
+                <form id="request-form"  >
                     <input type="text" name="genres" placeholder="Fantasy,Drama" required>
                     <input type="text" name="sortBy" placeholder="ranking" required>
                     <input type="text" name="sortOrder" placeholder="asc" required>
