@@ -6,7 +6,7 @@
 
 ## Features
 
-* TODO
+* A search tool for you to use to find information about any anime with filters !
 
 ## License
 
