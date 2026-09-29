@@ -3,42 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeRequester</title>
+    <title>Anime Requester</title>
     <link href="./css/style.css" rel="stylesheet"> 
     <script type="module" src="js/mains.js"></script>
     
 </head>
 <body>
+    <div id="banner-y"></div>
+
+    <header id="banner-x">
+        <div class="header-inner">
+            <h1 class="logo">ANIME REQUESTER</h1>
+        </div>
+    </header>
+
     <main id="app">
-        <div id="banner-x">
-            <!-- todo : bah une banniere jcp -->
-        </div>
-        <div id="banner-y">
-            <!-- todo : bah une banniere jcp -->
-        </div>
         <section id="request-container">
-            <p>Entrez votre recherche ici :</p>
-            <div id="request">
-                <form id="request-form"  >
-                    <input type="text" name="genres" placeholder="Fantasy,Drama" required>
-                    <input type="text" name="sortBy" placeholder="ranking" required>
-                    <input type="text" name="sortOrder" placeholder="asc" required>
-                    <input type="text" name="search" placeholder="Fullmetal" required>
-                    <input type="text" name="page" placeholder="1" required>
-                    <input type="text" name="size" placeholder="10" required>
-                    <button type="submit">lookup</button>
-                </form>
+            <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+
+            <div class="panel-header">
+                <h2>QUERY DATABASE</h2>
+                <label for="theme-toggle" class="theme-toggle-btn" title="Toggle form theme">
+                    <span class="toggle-dot"></span>
+                    <span class="toggle-text"></span>
+                </label>
+            </div>
+
+            <form id="request-form" action="https://anime-db.p.rapidapi.com/anime" method="GET">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="search">Title / Keyword</label>
+                        <input id="search" type="text" name="search" placeholder="e.g. Fullmetal" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="genres">Genres</label>
+                        <input id="genres" type="text" name="genres" placeholder="e.g. Fantasy,Drama" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sortBy">Sort By</label>
+                        <input id="sortBy" type="text" name="sortBy" placeholder="ranking" value="ranking" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sortOrder">Sort Order</label>
+                        <input id="sortOrder" type="text" name="sortOrder" placeholder="asc or desc" value="asc" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="page">Page</label>
+                        <input id="page" type="number" name="page" placeholder="1" value="1" min="1" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="size">Results Count</label>
+                        <input id="size" type="number" name="size" placeholder="10" value="10" min="1" max="50" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    <span>EXECUTE SEARCH</span>
+                </button>
+            </form>
+        </section>
+
+        <section id="response-container">
+            <div id="response-content">
+                <!-- à remplir avec du JS -->
             </div>
         </section>
-        <section id="response-container">
-            <span id="id="response-content"">
-                <!-- a faire avec du js -->
-            </span>
-        </section>
     </main>
+
     <footer id="bigfoot-container">
-        <div id="bigfoot-content">
-            <p>this is a footer</p>
+        <div class="footer-inner">
+            <p class="footer-left">SOURCE: ANIME-DB</p>
+            <p class="footer-right">made by students from the IUT of Ifs, Caen.</p>
         </div>
     </footer>
 </body>
