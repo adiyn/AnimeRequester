@@ -7,6 +7,7 @@
 ## Features
 
 * A search tool for you to use to find information about any anime with filters !
+* live [here](https://adiyn.github.io/AnimeRequester)
 
 ## License
 
