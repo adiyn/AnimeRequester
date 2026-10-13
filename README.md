@@ -19,6 +19,6 @@
 
 ## AI
 
-- No AI was used whatsoever
+- Because we cannot restrain the primal urge of certain collaborators to use LLMs/AIs, some ai was used.
 
 ## (˶￣▽￣˶)ﾉ bai bai
