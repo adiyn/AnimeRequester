@@ -24,10 +24,12 @@ async function request(path) {
 
 export function searchAdvanced(queryParams) {
     const params = new URLSearchParams();
-    
+
     for (const [key, value] of Object.entries(queryParams)) {
-        if (value) params.append(key, value);
+        if (value && value.trim() !== '') {
+            params.append(key, value.trim());
+        }
     }
-    
-    return request(`/anime?${params}`);
+
+    return request(`/anime?${params.toString()}`);
 }

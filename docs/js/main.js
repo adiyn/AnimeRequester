@@ -10,8 +10,6 @@ form.addEventListener("submit", async function (event) {
     const formData = new FormData(form);
     const queryParams = Object.fromEntries(formData.entries());
 
-    if (!queryParams.search && !queryParams.genres) return;
-
     renderMessage(responseContainer, "Recherche en cours...");
 
     try {
