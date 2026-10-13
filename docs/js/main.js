@@ -1,4 +1,4 @@
-import { searchByTitle } from './api.js';
+import { searchAdvanced } from './api.js';
 import { renderCards, renderMessage } from './cards.js';
 
 const form = document.getElementById("request-form");
@@ -8,14 +8,14 @@ form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const formData = new FormData(form);
-    const titreAnime = formData.get("search");
+    const queryParams = Object.fromEntries(formData.entries());
 
-    if (!titreAnime) return;
+    if (!queryParams.search && !queryParams.genres) return;
 
     renderMessage(responseContainer, "Recherche en cours...");
 
     try {
-        const resultatAnime = await searchByTitle(titreAnime);
+        const resultatAnime = await searchAdvanced(queryParams);
 
         if (!resultatAnime || resultatAnime.length === 0) {
             renderMessage(responseContainer, "Aucun anime trouvé.");

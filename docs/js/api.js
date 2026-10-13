@@ -22,15 +22,12 @@ async function request(path) {
     return json && Object.keys(json).length ? [json] : [];
 }
 
-export function searchByTitle(title) {
-    const params = new URLSearchParams({ page: 1, size: MAX_RESULTS, search: title });
+export function searchAdvanced(queryParams) {
+    const params = new URLSearchParams();
+    
+    for (const [key, value] of Object.entries(queryParams)) {
+        if (value) params.append(key, value);
+    }
+    
     return request(`/anime?${params}`);
-}
-
-export function searchById(id) {
-    return request(`/anime/by-id/${encodeURIComponent(id)}`);
-}
-
-export function searchByRanking(rank) {
-    return request(`/anime/by-ranking/${encodeURIComponent(rank)}`);
 }
