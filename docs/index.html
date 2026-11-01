@@ -32,28 +32,33 @@
             <form id="request-form">
                 <div class="form-grid">
                     <div class="input-group">
-                        <label for="search">Title / Keyword</label>
-                        <input id="search" type="text" name="search" placeholder="e.g. Fullmetal">
+                        <label for="q">TITLE / KEYWORD</label>
+                        <input id="q" type="text" name="q" placeholder="ex. Fullmetal, Naruto">
                     </div>
 
                     <div class="input-group">
-                        <label for="genres">Genres</label>
-                        <input id="genres" type="text" name="genres" placeholder="e.g. Fantasy,Drama">
+                        <label for="status">STATUS</label>
+                        <input id="status" type="text" name="status" placeholder="airing, complete, upcoming">
                     </div>
 
                     <div class="input-group">
-                        <label for="sortBy">Sort By</label>
-                        <input id="sortBy" type="text" name="sortBy" placeholder="ranking" value="ranking">
+                        <label for="order_by">SORT BY</label>
+                        <input id="order_by" type="text" name="order_by" placeholder="popularity, score, rank" value="popularity">
                     </div>
 
                     <div class="input-group">
-                        <label for="sortOrder">Sort Order</label>
-                        <input id="sortOrder" type="text" name="sortOrder" placeholder="asc or desc" value="asc">
+                        <label for="sort">ORDER BY</label>
+                        <input id="sort" type="text" name="sort" placeholder="asc or desc" value="desc">
                     </div>
 
                     <div class="input-group">
-                        <label for="size">Results Count</label>
-                        <input id="size" type="number" name="size" placeholder="10" value="10" min="1" max="50">
+                        <label for="year">YEAR</label>
+                        <input id="year" type="number" name="year" placeholder="ex. 2024" min="1960" max="2030">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="limit">MAX RESULTS</label>
+                        <input id="limit" type="number" name="limit" placeholder="10" value="10" min="1" max="25">
                     </div>
                 </div>
 
@@ -72,7 +77,7 @@
 
     <footer id="bigfoot-container">
         <div class="footer-inner">
-            <p class="footer-left">SOURCE: ANIME-DB</p>
+            <p class="footer-left">SOURCE: TENRAI API</p>
             <p class="footer-right">made by students from the IUT of Ifs, Caen.</p>
         </div>
     </footer>
