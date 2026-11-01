@@ -13,6 +13,50 @@
     src: url("../fonts/anime.otf");
 }
 
+/* Light Mode (base themeà) */
+:root {
+    --panel-bg: #ffffff;
+    --panel-border: #000000;
+    --panel-shadow: #000000;
+    --header-bg: #000000;
+    --header-color: #ffffff;
+    --label-color: #222222;
+    --input-bg: #fbfbfb;
+    --input-color: #000000;
+    --input-border: #000000;
+    --input-focus-bg: #ffffff;
+    --btn-bg: #000000;
+    --btn-color: #ffffff;
+    --btn-border: #000000;
+    --btn-hover-bg: #ffffff;
+    --btn-hover-color: #000000;
+    --toggle-border: #ffffff;
+    --toggle-color: #ffffff;
+    --card-text-color: #000000;
+}
+
+/* Dark Mode */
+#app:has(#theme-toggle:checked) {
+    --panel-bg: #000000;
+    --panel-border: #ffffff;
+    --panel-shadow: #ffffff;
+    --header-bg: #ffffff;
+    --header-color: #000000;
+    --label-color: #ffffff;
+    --input-bg: #000000;
+    --input-color: #ffffff;
+    --input-border: #ffffff;
+    --input-focus-bg: #000000;
+    --btn-bg: #ffffff;
+    --btn-color: #000000;
+    --btn-border: #ffffff;
+    --btn-hover-bg: #000000;
+    --btn-hover-color: #ffffff;
+    --toggle-border: #000000;
+    --toggle-color: #000000;
+    --card-text-color: #ffffff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -57,7 +101,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* Center header title */
+    justify-content: center;
     align-items: center;
 }
 
@@ -80,8 +124,7 @@ main {
     width: 100%;
 }
 
-
-/* Dark Mode */
+/* Dark Mode Toggle Button */
 .theme-toggle-btn {
     cursor: pointer;
     display: inline-flex;
@@ -110,25 +153,6 @@ main {
     display: inline-block;
 }
 
-#request-container:has(#theme-toggle:checked) {
-    --panel-bg: #000;
-    --panel-border: #fff;
-    --panel-shadow: #fff;
-    --header-bg: #fff;
-    --header-color: #000;
-    --label-color: #fff;
-    --input-bg: #000;
-    --input-color: #fff;
-    --input-border: #fff;
-    --input-focus-bg: #000;
-    --btn-bg: #fff;
-    --btn-color: #000;
-    --btn-border: #fff;
-    --btn-hover-bg: #000;
-    --btn-hover-color: #fff;
-    --toggle-border: #000;
-    --toggle-color: #000;
-}
 .theme-checkbox {
     display: none;
 }
@@ -137,7 +161,7 @@ main {
     content: "DARK";
 }
 
-#request-container:has(#theme-toggle:checked) .toggle-text::after {
+#app:has(#theme-toggle:checked) .toggle-text::after {
     content: "LIGHT";
 }
 
@@ -160,24 +184,6 @@ main {
 
 /* Form Container */
 #request-container {
-    --panel-bg: #ffffff;
-    --panel-border: #000000;
-    --panel-shadow: #000000;
-    --header-bg: #000000;
-    --header-color: #ffffff;
-    --label-color: #222222;
-    --input-bg: #fbfbfb;
-    --input-color: #000000;
-    --input-border: #000000;
-    --input-focus-bg: #ffffff;
-    --btn-bg: #000000;
-    --btn-color: #ffffff;
-    --btn-border: #000000;
-    --btn-hover-bg: #ffffff;
-    --btn-hover-color: #000000;
-    --toggle-border: #ffffff;
-    --toggle-color: #ffffff;
-
     width: 100%;
     max-width: 620px;
     background: var(--panel-bg);
@@ -299,4 +305,73 @@ main {
         gap: 0.5rem;
         text-align: center;
     }
+}
+
+/* Cards Container & Messages */
+#response-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.message {
+    padding: 1rem;
+    background: var(--panel-bg);
+    border: 3.5px solid var(--panel-border);
+    box-shadow: 6px 6px 0px var(--panel-shadow);
+    color: var(--card-text-color);
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Card Item */
+.card {
+    background: var(--panel-bg);
+    border: 3.5px solid var(--panel-border);
+    box-shadow: 6px 6px 0px var(--panel-shadow);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--panel-shadow);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    color: var(--card-text-color);
+    border-bottom: 2px solid var(--panel-border);
+    padding-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.card img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border: 2px solid var(--panel-border);
+    background-color: #000;
+    transition: border-color 0.2s ease;
+}
+
+.card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--card-text-color);
+    transition: color 0.2s ease;
+}
+
+.card p strong {
+    font-family: "anime-bold", sans-serif;
+    letter-spacing: 0.5px;
+    color: var(--card-text-color);
+    transition: color 0.2s ease;
 }
