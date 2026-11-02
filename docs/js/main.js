@@ -10,19 +10,19 @@ form.addEventListener("submit", async function (event) {
     const formData = new FormData(form);
     const queryParams = Object.fromEntries(formData.entries());
 
-    renderMessage(responseContainer, "Recherche en cours...");
+    renderMessage(responseContainer, "Searching...");
 
     try {
         const resultatAnime = await searchAdvanced(queryParams);
 
         if (!resultatAnime || resultatAnime.length === 0) {
-            renderMessage(responseContainer, "Aucun anime trouvé.");
+            renderMessage(responseContainer, "No anime found.");
             return;
         }
 
         renderCards(responseContainer, resultatAnime);
     } catch (error) {
         console.error(error);
-        renderMessage(responseContainer, `Erreur: ${error.message}`);
+        renderMessage(responseContainer, `Err ${error.message}`);
     }
 });
