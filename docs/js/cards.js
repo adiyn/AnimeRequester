@@ -17,7 +17,7 @@ export function createCard(anime) {
     if (anime.image) {
         const img = document.createElement('img');
         img.src = anime.image;
-        img.alt = `Affiche de ${anime.title}`;
+        img.alt = `Poster from ${anime.title}`;
         img.loading = 'lazy';
         card.append(img);
     }
@@ -25,8 +25,8 @@ export function createCard(anime) {
     card.append(
         createField('Synopsis', anime.synopsis),
         createField('Genres', anime.genres?.length ? anime.genres.join(', ') : 'N/A'),
-        createField('Classement', anime.ranking),
-        createField("Nombre d'épisodes", anime.episodes),
+        createField('Rank', anime.ranking),
+        createField("Eps", anime.episodes),
     );
 
     return card;
