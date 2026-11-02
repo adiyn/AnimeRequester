@@ -24,7 +24,7 @@ export async function searchAdvanced(queryParams) {
         image: anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url || '',
         synopsis: anime.synopsis || 'Non renseigné',
         genres: Array.isArray(anime.genres) ? anime.genres.map(g => g.name) : [],
-        rank: anime.score ?? anime.rank ?? 'N/A',
+        rank: anime.rank ?? 'N/A',
         episodes: anime.episodes ?? 'N/A'
     }));
 }
