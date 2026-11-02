@@ -25,7 +25,7 @@ export function createCard(anime) {
     card.append(
         createField('Synopsis', anime.synopsis),
         createField('Genres', anime.genres?.length ? anime.genres.join(', ') : 'N/A'),
-        createField('Rank', anime.ranking),
+        createField('Rank', anime.rank),
         createField("Eps", anime.episodes),
     );
 
